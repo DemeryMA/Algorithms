@@ -6,7 +6,11 @@ import sys
 # a solution that is more efficient than the naive 
 # recursive solution
 def eating_cookies(n, cache=None):
-  pass
+  arr = {0:1, 1:1, 2:2}
+    # Every subsequent cookie will have a total amount of ways to eat it EQUAL to the sum of the count of the 3 before it.
+  for number in range(3, n+1):
+    arr[number] = arr[number-3]+arr[number-2]+arr[number-1]
+  return arr[n]
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:

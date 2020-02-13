@@ -3,7 +3,35 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+#   max_batches = [{""}]
+#   min_ratio = 0
+
+# for i in max_:
+#   if max_batches(i) > ingredients(i):
+#     return 0
+#   elif max_batches(i) < ingredients(i):
+#     return max_batches
+
+  batches = -1
+  no_more_ingredients = False
+
+  while no_more_ingredients == False:
+    batches +=1
+
+    for item in recipe:
+      if item in ingredients.keys():
+        if recipe[item] <= ingredients[item]:
+          ingredients[item] -= recipe[item]
+        else:
+          no_more_ingredients = True
+          break
+      else:
+          no_more_ingredients = True
+          break
+    # break
+
+  return batches
+
 
 
 if __name__ == '__main__':
